@@ -1,5 +1,5 @@
 /**
- * @file magicSquare.c
+ * @file employeeMain.c
  * @author Marian Remoroza
  * @brief 
  * @version 0.1
@@ -22,40 +22,43 @@ int main(void){
     extern const int EmployeeTableEntries;
 
     PtrToEmployee matchPtr;
+    
+    /* employee number NOT found */
     matchPtr = searchEmployeeByNumber(EmployeeTable, EmployeeTableEntries, 1045);
     if (matchPtr != NULL)
         printf("Employee ID 1045 is in record %ld\n", matchPtr-EmployeeTable);
     else
         printf("Employee ID is NOT found in the record\n");
 
+    /* employee name found */
     matchPtr = searchEmployeeByName(EmployeeTable, EmployeeTableEntries, "Tony Bobcat");
     if (matchPtr!=NULL)
         printf("Employee Tony Bobcat is in record %ld\n", matchPtr-EmployeeTable);
     else
         printf("Employee Tony Bobcat is NOT found in the record\n");
 
-    /***** is in record *****/
+    /* employee phone found */
     matchPtr = searchEmployeeByPhone(EmployeeTable, EmployeeTableEntries, "310-555-1215");
     if (matchPtr!=NULL)
         printf("Employee phone number is in record %ld.\n", matchPtr-EmployeeTable);
     else
         printf("Employee phone number is NOT found in the record.\n");
     
-    /****** is not in record *****/
+    /* employee phone NOT found */
     matchPtr = searchEmployeeByPhone(EmployeeTable, EmployeeTableEntries, "909-356-9001");
     if(matchPtr!=NULL)
         printf("Employee phone number is in record %ld.\n", matchPtr-EmployeeTable);
     else
         printf("Employee phone number is NOT found in the record.\n");
     
-    /******* is in record ********/
+    /* employee salary found */
     matchPtr = searchEmployeeBySalary(EmployeeTable, EmployeeTableEntries, 4.50);
     if(matchPtr!=NULL)
         printf("Employee salary is in record %ld.\n", matchPtr-EmployeeTable);
     else    
         printf("Employee salary is NOT found in the record.\n");
     
-    /******** is not in record ********/
+    /* employee salary NOT found */
     matchPtr = searchEmployeeBySalary(EmployeeTable, EmployeeTableEntries, 16.50);
     if(matchPtr!=NULL)
         printf("Employee salary is in record %ld.\n", matchPtr-EmployeeTable);
