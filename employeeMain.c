@@ -51,14 +51,14 @@ int main(void){
     /******* is in record ********/
     matchPtr = searchEmployeeBySalary(EmployeeTable, EmployeeTableEntries, 4.50);
     if(matchPtr!=NULL)
-        printf("Employee salary is in record.\n");
+        printf("Employee salary is in record %ld.\n", matchPtr-EmployeeTable);
     else    
         printf("Employee salary is NOT found in the record.\n");
     
     /******** is not in record ********/
     matchPtr = searchEmployeeBySalary(EmployeeTable, EmployeeTableEntries, 16.50);
     if(matchPtr!=NULL)
-        printf("Employee salary is in record.\n");
+        printf("Employee salary is in record %ld.\n", matchPtr-EmployeeTable);
     else
         printf("Employee salary is NOT found in the record.\n");
 
